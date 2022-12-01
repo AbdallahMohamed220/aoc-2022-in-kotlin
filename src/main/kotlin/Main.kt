@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
                 sum +=it.toInt()
             }else{
              list.add(sum)
-             sum =0
+             sum =0 
             }
         }
 
