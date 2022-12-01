@@ -1,11 +1,14 @@
 import java.io.File
 import java.io.InputStream
+import java.nio.file.Paths
 
 fun main(args: Array<String>) {
-       val inputStream: InputStream = File("/Users/abdallah/IdeaProjects/Calorie_Counting/src/main/kotlin/example").inputStream()
-        val lineList = mutableListOf<String>()
-        var sum =0
-        val list= mutableListOf<Int>()
+
+    val path = Paths.get("").toAbsolutePath().toString()
+    val inputStream: InputStream = File("$path/src/main/kotlin/example").inputStream()
+    val lineList = mutableListOf<String>()
+    var sum =0
+    val list= mutableListOf<Int>()
 
     inputStream.bufferedReader().forEachLine { lineList.add(it) }
         lineList.forEach{
@@ -17,17 +20,12 @@ fun main(args: Array<String>) {
             }
         }
 
-
-
     list.sort()
-    println(list.maxOrNull() ?: 0
-    )
+
+    println(list.maxOrNull() ?: 0)
+
     var sumOfLastThree = 0
     sumOfLastThree =list[list.size -1] +list[list.size -2]+list[list.size -3]
     print(sumOfLastThree)
-
-
-
-
-
+    
 }
